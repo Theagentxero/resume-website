@@ -16,8 +16,16 @@
             <div class="flex flex-row ">
                 <div class="basis-0 md:basis-1/6 xl:basis-1/12 md:mr-3"></div>
                 <div class="px-5 basis-full md:basis-9/12 xl:basis-5/6">
-                    <div class="my-2 subpixel-antialiased text-2xl lg:text-3xl 2xl:text-4xl bg-ht-dark-brown text-ht-white font-extrabold p-2 sm:p-3 drop-shadow sm:drop-shadow-lg">
-                        Blog
+                    <div class=" drop-shadow sm:drop-shadow-lg flex flex-row items-center justify-between bg-ht-dark-brown">
+                        <div class=" subpixel-antialiased text-2xl lg:text-3xl 2xl:text-4xl  text-ht-white font-extrabold p-2 sm:p-3">
+                            Blog
+                        </div>
+                        <button
+                            class="text-base lg:text-lg xl:text-xl drop-shadow-lg p-1 lg:p-2 mr-2 bg-ht-dark hover:bg-ht-darker text-ht-white hover:text-ht-whiter"
+                            @click="goToBlogSite"
+                        >
+                            View Blog Site
+                        </button>
                     </div>
                     <Blog></Blog>
                 </div>
@@ -128,6 +136,9 @@
             }
         },
         methods: {
+            goToBlogSite(){
+                this.$router.push('/blog');
+            },
             cancelDebounce(){
                 this.debouncedNavTop.cancel();
             }
