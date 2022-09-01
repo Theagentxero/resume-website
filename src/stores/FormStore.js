@@ -1,4 +1,3 @@
-import { hasOwn } from '@vue/shared';
 import { defineStore } from 'pinia';
 
 export const useFormStore = defineStore('form', {
@@ -10,12 +9,13 @@ export const useFormStore = defineStore('form', {
             showValidation: false,
             fields:{},
             validation: {}
-        }
+        },
+        stash: {}
     }),
     // optional getters
     getters: {
         // getters receive the state as first parameter
-        checkActiveFormValid: (state) => {
+        activeFormValidity: (state) => {
             for (const property in state.form.fields) {
                 let validation = state.form.validation[property]
                 if(validation != undefined && validation != null){
@@ -26,14 +26,29 @@ export const useFormStore = defineStore('form', {
             }
             return true;
         },
-        getActiveFormValues: (state)=>{
+        activeFormValues: (state)=>{
             return state.form.fields;
         }
     },
     // optional actions
     actions: {
-        setForm(formName){
-            this.form.active = formName;
+        setFormActive(formName){
+            // See if we can recall this form from stash
+            if(Object.hasOwn(this.stash, formName)){
+                this.form = this.stash[formName];
+            }else{
+                this.form.active = formName;
+            }
+        },
+        closeAndStashActiveForm(){
+            this.stash[this.form.active] = {...this.form};
+            this.reset();
+        },
+        stashActiveForm(){
+            this.stash[this.form.active] = {...this.form};
+        },
+        closeActiveForm(){
+            this.reset();
         },
         toggleValidation(){
             this.form.showValidation = !this.form.showValidation;
@@ -70,5 +85,8 @@ export const useFormStore = defineStore('form', {
                 validation: {}
             }
         },
+        clearStash(){
+            this.stash = {};
+        }
     },
 })

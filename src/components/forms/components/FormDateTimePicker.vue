@@ -3,7 +3,7 @@
         <div class="flex flex-row items-stretch">
             <div class="basis-1/2 flex flex-row items-stretch">
                 <div 
-                    class="basis-1/4 text-right text-lg self-center font-bold text-ht-dark pl-2"
+                    class="hidden xl:block basis-1/4 text-right text-base md:text-lg self-start xl:self-center font-bold text-ht-dark pl-2"
                     :class="{
                         'underline': required,
                         'text-red-800': showSelfInvalid,
@@ -32,7 +32,7 @@
             </div>
            <div class="basis-1/2 flex flex-row items-stretch">
                 <div 
-                    class="basis-1/4 text-right text-lg self-center font-bold text-ht-dark pl-2"
+                    class="basis-1/4 text-right text-base md:text-lg self-center font-bold text-ht-dark pl-2"
                     :class="{
                         'underline': required,
                         'text-red-800': showSelfInvalid,
@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import { useFormStore } from '../../stores/FormStore.js'
+import { useFormStore } from '../../../stores/FormStore.js'
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat'
 

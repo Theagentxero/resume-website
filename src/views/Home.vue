@@ -1,21 +1,30 @@
 <template>
     <div id="Home" class="scroll-smooth">
-        <Howdy ref="howdy"></Howdy>
-        <Nav 
-            class="sticky top-0 mb-2 z-10 overflow-hidden"
-            :class="{
-                'w-full md:w-1/6 xl:w-1/12' : navTop,
-            }"
+        <Howdy></Howdy>
+        <HeaderNav ref="headerNav" v-show="!isMediumOrLarge"
+            class=" mb-6 z-10 overflow-hidden"
             :isSmall="isSmall"
             :onNavReact="cancelDebounce"
-            :isTop="navTop"
-            :showHome="navTop"
             :showBack="true"
-        ></Nav>
-        <div id="Blog">
-            <div class="flex flex-row ">
-                <div class="basis-0 md:basis-1/6 xl:basis-1/12 md:mr-3"></div>
-                <div class="px-5 basis-full md:basis-9/12 xl:basis-5/6">
+        ></HeaderNav>
+        <Transition name="floatingnav">
+            <FloatingNav v-if="isSmall && navTop"
+                class="fixed top-0 left-0 z-10 w-full"
+                :isSmall="isSmall"
+            ></FloatingNav>
+        </Transition>
+        <div class="flex flex-row">
+            <div class="basis-0 md:basis-2/12 xl:basis-1/12">
+                <Transition name="floatingnavside">
+                    <FloatingNav v-if="!isSmall && navTop"
+                        class="sticky top-0 left-0 z-10 w-full"
+                        :isSmall="isSmall"
+                    ></FloatingNav>
+                </Transition>
+            </div>
+        
+            <div class="px-2 basis-full md:basis-5/6 xl:basis-5/6 flex-grow">
+                <div id="Blog">
                     <div class=" drop-shadow sm:drop-shadow-lg flex flex-row items-center justify-between bg-ht-dark-brown">
                         <div class=" subpixel-antialiased text-2xl lg:text-3xl 2xl:text-4xl  text-ht-white font-extrabold p-2 sm:p-3">
                             Blog
@@ -29,13 +38,7 @@
                     </div>
                     <Blog></Blog>
                 </div>
-                <div class="basis-0 md:basis-1/12 md:mr-3"></div>
-            </div>
-        </div>
-        <div id="About">
-            <div class="flex flex-row">
-                <div class="basis-0 md:basis-1/6 xl:basis-1/12 md:mr-3"></div>
-                <div class="px-5 basis-full md:basis-9/12 xl:basis-5/6">
+                <div id="About">
                     <div class="my-2 subpixel-antialiased text-2xl lg:text-3xl 2xl:text-4xl bg-ht-dark-brown text-ht-white font-extrabold p-2 sm:p-3 drop-shadow sm:drop-shadow-lg">
                         About
                     </div>
@@ -45,13 +48,7 @@
                     <p>Nullam commodo tristique tristique. Vivamus id ex eros. Aenean venenatis ultricies pulvinar. Suspendisse aliquam in urna vitae varius. Nullam pulvinar massa elit, dictum iaculis orci gravida sit amet. Nullam tincidunt facilisis mattis. Fusce dignissim est at elementum consectetur. Duis ut vulputate mauris. Cras nulla tellus, vehicula vitae odio pretium, semper imperdiet velit. Praesent et eros eget augue molestie laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc accumsan est at eros luctus lacinia. Aliquam quis elit nisl. Duis ac risus a augue facilisis bibendum sit amet nec ex. Nunc quis risus pulvinar dui volutpat dignissim quis at turpis. Vivamus tristique convallis nisi, a condimentum orci.</p>
                     <p>Nullam vehicula gravida lectus, lobortis fermentum felis pharetra at. Donec fermentum ante id diam feugiat rhoncus. Nunc auctor lacinia mauris quis euismod. Nullam consequat ligula vitae odio dapibus rhoncus. Nulla facilisi. Duis placerat ligula faucibus lorem elementum, sed cursus sapien ornare. Sed quis nisl finibus, elementum lorem a, vestibulum nibh. Vestibulum ligula leo, imperdiet eget accumsan non, mattis laoreet leo. Sed mollis ac erat sit amet sagittis. Cras at urna quis justo feugiat blandit ac a est. Suspendisse luctus tortor rutrum convallis posuere. Pellentesque vel aliquam sapien, eu elementum dui. Mauris non ultrices neque. Vestibulum a ex vehicula, commodo leo quis, maximus nulla.</p>
                 </div>
-                <div class="basis-0 md:basis-1/12 md:mr-3"></div>
-            </div>
-        </div>
-        <div id="Resume">
-            <div class="flex flex-row ">
-                <div class="basis-0 md:basis-1/6 xl:basis-1/12 md:mr-3"></div>
-                <div class="px-5 basis-full md:basis-9/12 xl:basis-5/6">
+                <div id="Resume">
                     <div class="my-2 subpixel-antialiased text-2xl lg:text-3xl 2xl:text-4xl bg-ht-dark-brown text-ht-white font-extrabold p-2 sm:p-3 drop-shadow sm:drop-shadow-lg">
                         Resume
                     </div>
@@ -61,37 +58,19 @@
                     <p>Nullam commodo tristique tristique. Vivamus id ex eros. Aenean venenatis ultricies pulvinar. Suspendisse aliquam in urna vitae varius. Nullam pulvinar massa elit, dictum iaculis orci gravida sit amet. Nullam tincidunt facilisis mattis. Fusce dignissim est at elementum consectetur. Duis ut vulputate mauris. Cras nulla tellus, vehicula vitae odio pretium, semper imperdiet velit. Praesent et eros eget augue molestie laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc accumsan est at eros luctus lacinia. Aliquam quis elit nisl. Duis ac risus a augue facilisis bibendum sit amet nec ex. Nunc quis risus pulvinar dui volutpat dignissim quis at turpis. Vivamus tristique convallis nisi, a condimentum orci.</p>
                     <p>Nullam vehicula gravida lectus, lobortis fermentum felis pharetra at. Donec fermentum ante id diam feugiat rhoncus. Nunc auctor lacinia mauris quis euismod. Nullam consequat ligula vitae odio dapibus rhoncus. Nulla facilisi. Duis placerat ligula faucibus lorem elementum, sed cursus sapien ornare. Sed quis nisl finibus, elementum lorem a, vestibulum nibh. Vestibulum ligula leo, imperdiet eget accumsan non, mattis laoreet leo. Sed mollis ac erat sit amet sagittis. Cras at urna quis justo feugiat blandit ac a est. Suspendisse luctus tortor rutrum convallis posuere. Pellentesque vel aliquam sapien, eu elementum dui. Mauris non ultrices neque. Vestibulum a ex vehicula, commodo leo quis, maximus nulla.</p>
                 </div>
-                <div class="basis-0 md:basis-1/12 md:mr-3"></div>
-            </div>
-        </div>
-        <div id="Projects">
-            <div class=" flex flex-row ">
-                <div class="basis-0 md:basis-1/6 xl:basis-1/12 md:mr-3"></div>
-                <div class="px-5 basis-full md:basis-9/12 xl:basis-5/6">
+                <div id="Projects">
                     <div class="my-2 subpixel-antialiased text-2xl lg:text-3xl 2xl:text-4xl bg-ht-dark-brown text-ht-white font-extrabold p-2 sm:p-3 drop-shadow sm:drop-shadow-lg">
                         Featured Projects
                     </div>
                     <ProjectsDisplayCase></ProjectsDisplayCase>
                 </div>
-                <div class="basis-0 md:basis-1/12 md:mr-3"></div>
-            </div>
-        </div>
-        <div id="Contact-Top">
-            <div class="flex flex-row ">
-                <div class="basis-0 md:basis-1/6 xl:basis-1/12 md:mr-3"></div>
-                <div class="px-5 basis-full md:basis-9/12 xl:basis-5/6">
+                <div id="Contact">
                     <div class="mt-2 subpixel-antialiased text-2xl lg:text-3xl 2xl:text-4xl bg-ht-dark-brown text-ht-white font-extrabold p-2 sm:p-3 drop-shadow sm:drop-shadow-lg">
                         Contact
                     </div>
                     <Contact></Contact>
                 </div>
-                <div class="basis-0 md:basis-1/12 md:mr-3"></div>
-            </div>
-        </div>
-        <div id="Contact">
-            <div class="flex flex-row ">
-                <div class="basis-0 md:basis-1/6 xl:basis-1/12 md:mr-3"></div>
-                <div class="px-5 basis-full md:basis-9/12 xl:basis-5/6">
+                <div id="Footer">
                     <div class="mt-2 subpixel-antialiased bg-ht-dark-brown text-ht-white pb-5 px-2 pt-2 sm:px-3 sm:pt-3 drop-shadow sm:drop-shadow-lg flex flex-col sm:flex-row gap-2 justify-between">
                         <div>
                             made with ❤ by Taylor Richards in {{new Date().getFullYear()}} 
@@ -103,16 +82,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="basis-0 md:basis-1/12 md:mr-3"></div>
             </div>
+            <div class="basis-0 lg:basis-1/12"></div>
         </div>
     </div>
-    
 </template>
 
 <script>
     import Howdy from '../components/Howdy.vue'
-    import Nav from '../components/Nav.vue'
+    import HeaderNav from '../components/HeaderNav.vue'
+    import FloatingNav from '../components/FloatingNav.vue'
     import ProjectsDisplayCase from '../components/ProjectsDisplayCase.vue'
     import Blog from '../components/Blog.vue'
     import Contact from '../components/Contact.vue'
@@ -123,7 +102,8 @@
     export default {
         components: {
             Howdy,
-            Nav,
+            HeaderNav,
+            FloatingNav,
             Blog,
             Contact,
             ProjectsDisplayCase
@@ -132,6 +112,7 @@
             return {
                 navTop: false,
                 isSmall: false,
+                isMediumOrLarge: false,
                 debouncedNavTop: null,
             }
         },
@@ -149,31 +130,34 @@
                 for (const entry of entries) {
                     if(entry.contentRect.width < 768){
                         this.isSmall = true;
+                        this.isMediumOrLarge = false;
                     }else{
                         this.isSmall = false;
+                        if(entry.contentRect.width < 1280){
+                            this.isMediumOrLarge = true;
+                        }else{
+                            this.isMediumOrLarge = false;
+                        }
                     }
                 }
             })
             resizeObs.observe(bodyElm);
         },
         mounted(){
-            this.debouncedNavTop = debounce((isIntersecting)=>{
-                if(isIntersecting){
-                    this.navTop = false;
-                }else{
-                    this.navTop = true;
-                }
-            }, 300);
-
-            var howdyElm = this.$refs.howdy.$el
+            var headerNavElm = this.$refs.headerNav.$el
             let options = {
                 threshold: 0.1
             }
             intObs = new IntersectionObserver((entries)=>{
-                this.debouncedNavTop(entries[0].isIntersecting)
+                if(entries[0].isIntersecting){
+                    this.navTop = false;
+                }else{
+                    this.navTop = true;
+                }
+                // this.debouncedNavTop(entries[0].isIntersecting)
             }, options);
 
-            intObs.observe(howdyElm)
+            intObs.observe(headerNavElm)
 
         }, 
         beforeDestroy () {
@@ -184,6 +168,23 @@
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.floatingnav-enter-active,
+.floatingnav-leave-active {
+    transition: all 0.25s ease-in-out;
+}
+.floatingnav-enter-from,
+.floatingnav-leave-to {
+     transform: translateY(-200px);
+}
+
+.floatingnavside-enter-active,
+.floatingnavside-leave-active {
+    transition: all 0.3s ease-in-out;
+}
+.floatingnavside-enter-from,
+.floatingnavside-leave-to {
+    transform: translatex(-350px);
+}
 
 </style>

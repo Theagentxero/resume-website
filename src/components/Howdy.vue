@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row py-12">
+    <div class="flex flex-row mt-12 mb-6">
         <div class="basis-1/12 lg:basis-1/6"></div>
         <div class="basis-5/6 lg:basis-4/6">
             <div class="flex-col">

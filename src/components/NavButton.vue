@@ -25,12 +25,6 @@ export default {
             required: false,
             default: null
         },
-        size: {
-            type: String,
-            validator: function (value) {
-                return ['sm', 'md', 'lg'].indexOf(value) !== -1;
-            }
-        },
         docked:{
             type: Boolean,
             default: false
@@ -55,20 +49,11 @@ export default {
 
     },
     computed:{
-        sizeClass(){
-            if(this.size == 'sm'){
-                return ``
-            }else if(this.size == 'lg'){
-                return ``
-            }else{
-                return ``
-            }
-        },
         dockedClass(){
             if(this.docked){
-                return `text-sm lg:text-base xl:text-sm 2xl:text-lg drop-shadow p-1 lg:p-2 bg-ht-dark hover:bg-ht-darker text-ht-white hover:text-ht-whiter text-left mb-1`
+                return `text-sm lg:text-base xl:text-sm 2xl:text-lg drop-shadow p-1 md:py-2 lg:py-1 bg-ht-dark hover:bg-ht-darker text-ht-white hover:text-ht-whiter text-left mb-1`
             }else{
-                return `text-lg lg:text-xl xl:text-2xl drop-shadow-lg p-2 lg:p-3 bg-ht-dark hover:bg-ht-darker text-ht-white hover:text-ht-whiter`
+                return `text-base md:text-lg lg:text-xl xl:text-2xl drop-shadow-lg p-1 md:p-2 lg:p-3 bg-ht-dark hover:bg-ht-darker text-ht-white hover:text-ht-whiter`
             }
         }
     },

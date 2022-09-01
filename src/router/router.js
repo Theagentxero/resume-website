@@ -62,17 +62,17 @@ const router = createRouter({
     history: createWebHistory(),
     routes: routes,
     scrollBehavior (to, from, savedPosition) {
+        console.log(from)
         if(to.hash){
-            var navRect = document.getElementById('nav-cont').getBoundingClientRect();
             if(document.getElementsByTagName('body')[0].getBoundingClientRect().width < 768){
-                return { 
-                    top: navRect.height,
+                return {
+                    top: 50,
                     el: to.hash,
                     behavior: 'smooth',
                 }
             }else{
                 return { 
-                    top: 20,
+                    top: 10,
                     el: to.hash,
                     behavior: 'smooth',
                 }

@@ -4,7 +4,17 @@
 	</div>
 </template>
 
-<script setup>
+<script>
+import { useSessionStore } from './stores/SessionStore.js'
+export default {
+	setup(){
+        const sessionStore = useSessionStore();
+        return {sessionStore}
+    },
+	mounted(){
+		this.sessionStore.setup()
+	}
+};
 </script>
 
 <style>

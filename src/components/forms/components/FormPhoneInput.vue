@@ -1,8 +1,8 @@
 <template>
-    <div class="flex flex-col self-stretch p-2">
-        <div class="flex flex-row items-stretch">
-            <div 
-                class="basis-1/4 text-right text-lg self-center font-bold text-ht-dark pl-2"
+    <div class="flex flex-col self-stretch p-0 xl:p-2">
+        <div class="flex flex-col items-stretch">
+            <label :for="`ff-${dataName}`" 
+                class="text-base md:text-lg font-bold text-ht-dark pl-2"
                 :class="{
                     'underline': required,
                     'text-red-800': showSelfInvalid,
@@ -10,42 +10,36 @@
                 }"
             >
                 {{label}}
-            </div>
-            <div class="basis-3/4 mr-2 ml-3 flex flex-col">
-                <input 
-                    ref="self"
-                    v-model="value" 
-                    @input="updated"
-                    :name="dataName" 
-                    type="email" 
-                    :spellcheck="spellCheck" 
-                    :placeholder="placeholder"
-                    autocomplete="on"
-                    class=" py-1 px-2 bg-ht-whiter border-2 rounded-md text-ht-darker"
-                    :class="{
-                        'border-ht-darker focus:border-ht-dark ': !showSelfInvalid,
-                        'border-red-700 focus:border-red-900 bg-red-50': showSelfInvalid,
-                    }"
-                />
-                
-            </div>
+            </label>
+            <input 
+                :id="`ff-${dataName}`" 
+                ref="self"
+                :value="value"
+                @input="updated"
+                :name="dataName" 
+                type="tel" 
+                :spellcheck="spellCheck"
+                :placeholder="placeholder"
+                :data-position="position"
+                autocomplete="on"
+                class=" py-1 px-2 bg-ht-whiter border-2 rounded-md text-ht-darker"
+                :class="{
+                    'border-ht-darker focus:border-ht-dark ': !showSelfInvalid,
+                    'border-red-700 focus:border-red-900 bg-red-50': showSelfInvalid,
+                }"
+            />
         </div>
         <Transition name="field-notify">
-            <div class="flex flex-row items-stretch"
-                v-if="showSelfInvalid"
-            >
-                <div class="basis-1/4"></div>
-                <div class=" basis-3/4 pl-2 text-red-800">
-                    {{label}} is required
-                </div>
+            <div class=" pl-2 text-red-800" v-if="showSelfInvalid">
+                {{label}} is required
             </div>
         </Transition>
     </div>
 </template>
 
 <script>
-import { useFormStore } from '../../stores/FormStore.js'
-import EmailValidation from '../../assets/lib/Email.js';
+import { useFormStore } from '../../../stores/FormStore.js'
+import PhoneNumber from '../../../assets/lib/PhoneNumber.js';
 
 export default {
     setup(){
@@ -76,11 +70,11 @@ export default {
         },
         minLength: {
             type: Number,
-            default: 5
+            default: 10
         },
         spellCheck:{
             type: Boolean,
-            default: false
+            default: true
         },
         getFocusOnMount:{
             type: Boolean,
@@ -89,13 +83,28 @@ export default {
     },
     data() {
         return {
-            value: null 
+            value: null,
+            position: 0
         }
     },
     methods:{
         updated(evt){
-            this.formStore.form.fields[this.dataName] = evt.target.value;
+            var cursorPos = this.$refs.self.selectionEnd;
+            var initLength = evt.target.value.length;
+            this.value = PhoneNumber.format(evt.target.value)
+            var finLength = this.value.length;
+            var moveQuota = finLength - initLength;
+            if(moveQuota > 0){
+                cursorPos = Number(cursorPos) + moveQuota;
+            }else{
+                cursorPos = Number(cursorPos);
+            }
+            let num = PhoneNumber.numbersOnly(this.value);
+            this.formStore.form.fields[this.dataName] = (num != null) ? num.join('') : null;
             this.formStore.form.validation[this.dataName] = this.valid;
+            this.$nextTick(()=>{
+                this.$refs.self.setSelectionRange(cursorPos, cursorPos);
+            })
         },
     },
     computed:{
@@ -114,9 +123,10 @@ export default {
                 return false;
             }
             if(this.required){
-                return EmailValidation(this.value);
+                return PhoneNumber.isValid(this.value);
+            }else{
+                return true;
             }
-            return true;
         }
     },
     beforeMount () {
@@ -128,7 +138,7 @@ export default {
             this.$refs.self.focus();
         }
     },
-    beforeDestroy () {
+    beforeUnmount() {
         this.formStore.removeField(this.dataName);
     },
 }
