@@ -11,13 +11,13 @@
                                 </div>
                             </div>
                         </NavButton>
-                        <NavButton class="nav-btn" link="About" :docked="false" key="About">
+                        <!-- <NavButton class="nav-btn" link="About" :docked="false" key="About">
                             <div class="m-0 p-0 flex flex-row">
                                 <div :class="`m-0 ml-1 p-0 basis-full`">
                                     About
                                 </div>
                             </div>
-                        </NavButton>
+                        </NavButton> -->
                         <NavButton class="nav-btn" link="Resume" :docked="false" key="Resume">
                             <div class="m-0 p-0 flex flex-row">
                                 <div :class="`m-0 ml-1 p-0 basis-full`">

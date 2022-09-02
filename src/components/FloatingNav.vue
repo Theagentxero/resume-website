@@ -32,7 +32,7 @@
                             </div>
                         </div>
                     </NavButton>
-                    <NavButton class="nav-btn" link="About" :onClick="navigationCollapse" v-if="!collapsed" :docked="true" key="About">
+                    <!-- <NavButton class="nav-btn" link="About" :onClick="navigationCollapse" v-if="!collapsed" :docked="true" key="About">
                         <div class="m-0 p-0 flex flex-row">
                             <div class="m-0 px-5 md:px-0 md:pl-1 md:pr-2 fa-fw lg:fa-1x xl:fa-fw 2xl:fa-lg">
                                 <i class="fa-solid fa-book" data-fa-transform="right-1"></i> 
@@ -41,7 +41,7 @@
                                 About
                             </div>
                         </div>
-                    </NavButton>
+                    </NavButton> -->
                     <NavButton class="nav-btn" link="Resume" :onClick="navigationCollapse" v-if="!collapsed" :docked="true" key="Resume">
                         <div class="m-0 p-0 flex flex-row">
                             <div class="m-0 px-5 md:px-0 md:pl-1 md:pr-2 fa-fw lg:fa-1x xl:fa-fw 2xl:fa-lg">

@@ -38,7 +38,7 @@
                     </div>
                     <Blog></Blog>
                 </div>
-                <div id="About">
+                <!-- <div id="About">
                     <div class="my-2 subpixel-antialiased text-2xl lg:text-3xl 2xl:text-4xl bg-ht-dark-brown text-ht-white font-extrabold p-2 sm:p-3 drop-shadow sm:drop-shadow-lg">
                         About
                     </div>
@@ -47,7 +47,7 @@
                     <p>In vitae neque ac nunc porttitor posuere vel ut lorem. In cursus arcu sollicitudin mi dictum fermentum. In malesuada purus vitae fringilla laoreet. Mauris sit amet ante nisl. Maecenas tristique aliquet commodo. Maecenas rhoncus sapien a ante facilisis tempor. Sed mollis vestibulum mattis. Nulla scelerisque bibendum mi. Donec quis commodo ex. Sed lobortis congue nisi non tincidunt.</p>
                     <p>Nullam commodo tristique tristique. Vivamus id ex eros. Aenean venenatis ultricies pulvinar. Suspendisse aliquam in urna vitae varius. Nullam pulvinar massa elit, dictum iaculis orci gravida sit amet. Nullam tincidunt facilisis mattis. Fusce dignissim est at elementum consectetur. Duis ut vulputate mauris. Cras nulla tellus, vehicula vitae odio pretium, semper imperdiet velit. Praesent et eros eget augue molestie laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc accumsan est at eros luctus lacinia. Aliquam quis elit nisl. Duis ac risus a augue facilisis bibendum sit amet nec ex. Nunc quis risus pulvinar dui volutpat dignissim quis at turpis. Vivamus tristique convallis nisi, a condimentum orci.</p>
                     <p>Nullam vehicula gravida lectus, lobortis fermentum felis pharetra at. Donec fermentum ante id diam feugiat rhoncus. Nunc auctor lacinia mauris quis euismod. Nullam consequat ligula vitae odio dapibus rhoncus. Nulla facilisi. Duis placerat ligula faucibus lorem elementum, sed cursus sapien ornare. Sed quis nisl finibus, elementum lorem a, vestibulum nibh. Vestibulum ligula leo, imperdiet eget accumsan non, mattis laoreet leo. Sed mollis ac erat sit amet sagittis. Cras at urna quis justo feugiat blandit ac a est. Suspendisse luctus tortor rutrum convallis posuere. Pellentesque vel aliquam sapien, eu elementum dui. Mauris non ultrices neque. Vestibulum a ex vehicula, commodo leo quis, maximus nulla.</p>
-                </div>
+                </div> -->
                 <div id="Resume">
                     <div class="my-2 subpixel-antialiased text-2xl lg:text-3xl 2xl:text-4xl bg-ht-dark-brown text-ht-white font-extrabold p-2 sm:p-3 drop-shadow sm:drop-shadow-lg">
                         Resume
@@ -76,7 +76,7 @@
                             made with ❤ by Taylor Richards in {{new Date().getFullYear()}} 
                         </div>
                         <div class="underline text-ht-whiter hover:text-ht-white">
-                            <a href="">
+                            <a href="https://github.com/Theagentxero/resume-website" target="_blank">
                                 View Site Source On Github
                             </a>
                         </div>
