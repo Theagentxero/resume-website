@@ -77,8 +77,6 @@ import ProjectsHeader from './subcomponents/ProjectsHeader.vue'
 import ProjectsContent from './subcomponents/ProjectsContent.vue'
 import ProjectsInteractionRow from './subcomponents/ProjectsInteractionRow.vue'
 
-import debounce from 'underscore/modules/debounce.js'
-
 export default {
     name: "ProjectsDisplayCase",
     components: {

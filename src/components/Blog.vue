@@ -9,8 +9,8 @@
                 @click="openClarityModal()"
             >
                 <div class="basis-1/2"></div>
-                <div class="basis-0 sm:basis-auto lg:basis-1/2 xl:basis-auto border-t-4 border-b-4 lg:border-b-0 xl:border-b-4 backdrop-blur-lg 
-                 border-ht-dark-brown p-2 backdrop-contrast-50  backdrop-brightness-200 flex flex-col">
+                <div class="basis-0 sm:basis-auto lg:basis-1/2 xl:basis-auto border-t-4 border-b-4 lg:border-b-0 xl:border-b-4
+                 border-ht-dark-brown p-2 flex flex-col blog-text-background-white">
                     <div class="text-xl font-semibold underline underline-offset-1">
                         The Practical Approach To Code Clarity
                     </div>
@@ -26,7 +26,8 @@
                     }"
                     @click="openCargoModal()"
                 >
-                    <div class="self-end lg:self-stretch xl:self-end p-2 border-t-0 border-r-0 grow sm:grow-0 sm:shrink lg:grow xl:grow-0 xl:shrink sm:border-t-0 sm:border-r-4 lg:border-r-0 xl:border-r-4 xl:border-t-4 border-ht-dark-brown backdrop-blur-lg backdrop-brightness-200">
+                    <div class="self-end lg:self-stretch xl:self-end p-2 border-t-0 border-r-0 grow sm:grow-0 sm:shrink lg:grow xl:grow-0 xl:shrink sm:border-t-0 sm:border-r-4 lg:border-r-0 xl:border-r-4 xl:border-t-4 border-ht-dark-brown 
+                    blog-text-background-yellow">
                         <div class="text-lg font-semibold underline underline-offset-1">
                             The New Face of Cargo Cult Programming
                         </div>
@@ -43,7 +44,8 @@
                     }"
                     @click="openJWTModal()"
                 >
-                    <div class="self-end lg:self-stretch xl:self-end p-2 border-t-0 border-r-0 grow sm:grow-0 sm:shrink lg:grow xl:grow-0 xl:shrink sm:border-t-0 sm:border-r-4 lg:border-r-0 xl:border-r-4 xl:border-t-4 border-ht-dark-brown backdrop-blur-lg backdrop-brightness-200">
+                    <div class="self-end lg:self-stretch xl:self-end p-2 border-t-0 border-r-0 grow sm:grow-0 sm:shrink lg:grow xl:grow-0 xl:shrink sm:border-t-0 sm:border-r-4 lg:border-r-0 xl:border-r-4 xl:border-t-4 border-ht-dark-brown 
+                    blog-text-background-white">
                         <div class="text-lg font-semibold underline underline-offset-1">
                             A Practical Guide To JWTs
                         </div>
@@ -60,7 +62,8 @@
                     }"
                     @click="openThumbModal()"
                 >
-                    <div class="self-end lg:self-stretch xl:self-end p-2 border-t-0 border-r-0 grow sm:grow-0 sm:shrink lg:grow xl:grow-0 xl:shrink sm:border-t-0 sm:border-r-4 lg:border-r-0 xl:border-r-4 xl:border-t-4 border-ht-dark-brown backdrop-blur backdrop-contrast-100 backdrop-brightness-50">
+                    <div class="self-end lg:self-stretch xl:self-end p-2 border-t-0 border-r-0 grow sm:grow-0 sm:shrink lg:grow xl:grow-0 xl:shrink sm:border-t-0 sm:border-r-4 lg:border-r-0 xl:border-r-4 xl:border-t-4 border-ht-dark-brown
+                    blog-text-background-gray">
                         <div class="text-lg font-semibold underline underline-offset-1">
                             Entropy Based Thumbnail Generation
                         </div>
@@ -152,5 +155,13 @@ export default {
 </script>
 
 <style scoped>
-
+.blog-text-background-white{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.blog-text-background-yellow{
+    background-color: rgba(255, 225, 1, 1);
+}
+.blog-text-background-gray{
+    background-color: rgba(31, 32, 36, 0.8);
+}
 </style>
