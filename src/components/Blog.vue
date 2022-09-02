@@ -6,7 +6,7 @@
                 :style="{
                     'background-image': 'url(\'/blog_bearing.webp\')'
                 }"
-                @click="clarityModal = true"
+                @click="openClarityModal()"
             >
                 <div class="basis-1/2"></div>
                 <div class="basis-0 sm:basis-auto lg:basis-1/2 xl:basis-auto border-t-4 border-b-4 lg:border-b-0 xl:border-b-4 backdrop-blur-lg 
@@ -24,7 +24,7 @@
                     :style="{
                         'background-image': 'url(\'/blog_birds_wide.webp\')'
                     }"
-                    @click="cargoModal = true"
+                    @click="openCargoModal()"
                 >
                     <div class="self-end lg:self-stretch xl:self-end p-2 border-t-0 border-r-0 grow sm:grow-0 sm:shrink lg:grow xl:grow-0 xl:shrink sm:border-t-0 sm:border-r-4 lg:border-r-0 xl:border-r-4 xl:border-t-4 border-ht-dark-brown backdrop-blur-lg backdrop-brightness-200">
                         <div class="text-lg font-semibold underline underline-offset-1">
@@ -41,7 +41,7 @@
                     :style="{
                         'background-image': 'url(\'/blog_lock.webp\')'
                     }"
-                    @click="jwtModal = true"
+                    @click="openJWTModal()"
                 >
                     <div class="self-end lg:self-stretch xl:self-end p-2 border-t-0 border-r-0 grow sm:grow-0 sm:shrink lg:grow xl:grow-0 xl:shrink sm:border-t-0 sm:border-r-4 lg:border-r-0 xl:border-r-4 xl:border-t-4 border-ht-dark-brown backdrop-blur-lg backdrop-brightness-200">
                         <div class="text-lg font-semibold underline underline-offset-1">
@@ -58,7 +58,7 @@
                     :style="{
                         'background-image': 'url(\'/blog_sharp.webp\')'
                     }"
-                    @click="thumbModal = true"
+                    @click="openThumbModal()"
                 >
                     <div class="self-end lg:self-stretch xl:self-end p-2 border-t-0 border-r-0 grow sm:grow-0 sm:shrink lg:grow xl:grow-0 xl:shrink sm:border-t-0 sm:border-r-4 lg:border-r-0 xl:border-r-4 xl:border-t-4 border-ht-dark-brown backdrop-blur backdrop-contrast-100 backdrop-brightness-50">
                         <div class="text-lg font-semibold underline underline-offset-1">
@@ -121,6 +121,22 @@ export default {
         }
     },
     methods: {
+        openThumbModal(){
+            this.thumbModal = true;
+            this.$router.push({ hash: `#Blog`, query: { open_article: 'entropy_based_thumbnail_gen' }})
+        },
+        openJWTModal(){
+            this.jwtModal = true;
+            this.$router.push({ hash: `#Blog`, query: { open_article: 'jwt_guide' }})
+        },
+        openCargoModal(){
+            this.cargoModal = true;
+            this.$router.push({ hash: `#Blog`, query: { open_article: 'the_new_face_of_cargo_cult_dev' }})
+        },
+        openClarityModal(){
+            this.clarityModal = true;
+            this.$router.push({ hash: `#Blog`, query: { open_article: 'code_clarity' }})
+        }
     },
     computed:{
     },

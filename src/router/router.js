@@ -62,7 +62,6 @@ const router = createRouter({
     history: createWebHistory(),
     routes: routes,
     scrollBehavior (to, from, savedPosition) {
-        console.log(from)
         if(to.hash){
             if(document.getElementsByTagName('body')[0].getBoundingClientRect().width < 768){
                 return {
