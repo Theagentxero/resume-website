@@ -7,6 +7,14 @@ Also, it has a blog.
 ### Requires .env.local file with the following format
 
 ```
-VITE_CF_WORKERS_URL="http://0.0.0.0:8787"
-VITE_THUMBNAIL_GENERATION_URL="http://localhost:5000"
+VITE_CF_WORKERS_URL="WRANGLER URL"
+VITE_THUMBNAIL_GENERATION_URL="THUMB GEN URL"
+VITE_FORM_API_URL="FORM API URL"
 ```
+
+
+### How To
+After cloning run 
+`npm install`
+then
+`npm run dev`
