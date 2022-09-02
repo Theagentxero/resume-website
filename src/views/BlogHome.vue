@@ -2,7 +2,7 @@
     <div id="Home" class="scroll-smooth relative">
         <Howdy ref="howdy"></Howdy>
         <div class="flex flex-row">
-            <div class="basis-0 lg:basis-1/12 md:mr-3"></div>
+            <div class="basis-0 lg:basis-1/12"></div>
             <div class="px-5 basis-full lg:basis-10/12">
                 <div class="mb-1 drop-shadow sm:drop-shadow-lg flex flex-row items-center justify-between bg-ht-dark-brown">
                     <div class="my-2 subpixel-antialiased text-2xl lg:text-3xl 2xl:text-4xl  text-ht-white font-extrabold p-2 sm:p-3">
@@ -49,7 +49,7 @@
                     </button>
                 </div>
             </div>
-            <div class="basis-0 lg:basis-1/12 md:mr-3"></div>
+            <div class="basis-0 lg:basis-1/12"></div>
         </div>
         
     </div>

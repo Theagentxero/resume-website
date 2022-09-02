@@ -10,7 +10,7 @@
                 <img 
                     class="block xl:hidden p-3 max-h-60 xl:max-h-96 mx-auto drop-shadow-lg" 
                     alt="Valve Ai Logo" 
-                    src="../assets/vai_logo_standard.png" 
+                    src="../assets/vai_logo_standard.webp" 
                 />
             </div>
             <div class="flex flex-col basis-4/6 p-2">
@@ -39,12 +39,12 @@
                 <img 
                     class="hidden xl:block p-3 max-h-60 xl:max-h-96 mx-auto rounded-full drop-shadow-lg" 
                     alt="Johnson's Dictionary Online Quotes Project Logo" 
-                    src="../assets/jdo_quotes_logo.jpg"
+                    src="../assets/jdo_quotes_logo.webp"
                 />
                 <img 
                     class="block xl:hidden p-3 max-h-60 xl:max-h-96 mx-auto drop-shadow-lg" 
                     alt="Valve Ai Logo" 
-                    src="../assets/jdo_quotes_banner_logo.png" 
+                    src="../assets/jdo_quotes_banner_logo.webp" 
                 />
             </div>
             <div class="flex flex-col basis-4/6 p-2">

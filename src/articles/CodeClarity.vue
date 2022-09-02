@@ -104,11 +104,11 @@
                 <p class="my-2 leading-relaxed">
                     Consider the following code snippets, noting that both function identically, and both pass a default rules check with ESLint.
                 </p>
-                <div>
+                <div class="overflow-y-scroll">
                     <pre><code class="language-js">{{lintingExampleBad}}</code></pre>
                 </div>
                 <br>
-                <div>
+                <div class="overflow-y-scroll">
                     <pre><code class="language-js">{{lintingExampleOk}}</code></pre>
                 </div>
                 <p class="my-2 leading-relaxed">
@@ -145,7 +145,7 @@
                         </li>
                     </ul>
                 </p>
-                <div>
+                <div class="overflow-y-scroll">
                     <pre><code class="language-js">{{lintingPostRules}}</code></pre>
                 </div>
                 <p class="my-2 leading-relaxed">
