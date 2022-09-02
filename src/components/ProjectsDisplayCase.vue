@@ -23,7 +23,7 @@
                     :content="vaiContent"
                 ></ProjectsContent>
                 <ProjectsInteractionRow>
-                    <a class="grow" href="https://www.valveai.com/">
+                    <a class="grow" href="https://www.valveai.com/" target="_blank">
                         <div class="text-lg text-center underline underline-offset-2 p-1 shadow-lg bg-ht-dark hover:bg-ht-darker text-ht-whiter">
                             Visit Valve Ai's Website
                         </div>
@@ -58,7 +58,7 @@
                     :content="jdoContent"
                 ></ProjectsContent>
                 <ProjectsInteractionRow>
-                    <a class="grow" href="https://johnsonsdictionaryonline.com//">
+                    <a class="grow" href="https://johnsonsdictionaryonline.com/" target="_blank">
                         <div class="text-lg text-center underline underline-offset-2 p-1 shadow-lg bg-ht-dark hover:bg-ht-darker text-ht-whiter">
                             Visit Johnson's Dictionary Online
                         </div>
