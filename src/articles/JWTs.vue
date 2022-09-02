@@ -152,7 +152,7 @@
                     </li>
                     <li class="py-1 leading-relaxed">
                         <span class="font-semibold">JWTs Should Be Stored In Cookies</span> - Cookies are still the safest storage method we have as
-                        web designers. Backed by the browsers security, a cookie with HTTPS only, a strict samesite policy, and the secure flag enabled
+                        web designers. Backed by the browsers security, a cookie with HTTP only, a strict samesite policy, and the secure flag enabled
                         is as secure a token as it is possible for us to provide. It is important that we use all of these cookie options to ensure
                         that we have done everything in our power to prevent the leakage of our JWT to a bad actor.
                     </li>
