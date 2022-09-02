@@ -18,3 +18,7 @@ After cloning run
 `npm install`
 then
 `npm run dev`
+
+Site is MIT Licenced
+
+Articles are CC BY SA
