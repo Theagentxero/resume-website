@@ -1,5 +1,5 @@
 <template>
-    <div class="blog-article-container">
+    <div>
         <div 
             class="bg-right-top bg-cover flex flex-col sm:flex-row justify-end sm:justify-start"
             :style="{
