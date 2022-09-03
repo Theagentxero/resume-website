@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="blog-article-container">
         <div 
             class="bg-right-top bg-cover flex flex-col sm:flex-row justify-end sm:justify-start"
             :style="{
@@ -103,12 +103,12 @@
                 <p class="my-2 leading-relaxed">
                     Consider the following code snippets, noting that both function identically, and both pass a default rules check with ESLint.
                 </p>
-                <div class="overflow-y-scroll">
-                    <pre class=" overflow-y-scroll"><code class="language-js overflow-y-scroll">{{lintingExampleBad}}</code></pre>
+                <div class="overflow-x-auto">
+                    <pre class="overflow-x-auto"><code class="language-js overflow-x-auto">{{lintingExampleBad}}</code></pre>
                 </div>
                 <br>
-                <div class="overflow-y-scroll">
-                    <pre><code class="language-js">{{lintingExampleOk}}</code></pre>
+                <div class="overflow-x-auto">
+                    <pre class="overflow-x-auto"><code class="language-js">{{lintingExampleOk}}</code></pre>
                 </div>
                 <p class="my-2 leading-relaxed">
                     I'd like to apologize for subjecting you to the first code snippet, but I'm sure you've parsed through real production code that looks like that. <br>
@@ -146,8 +146,8 @@
                         </li>
                     </ul>
                 </p>
-                <div class="overflow-y-scroll">
-                    <pre><code class="language-js">{{lintingPostRules}}</code></pre>
+                <div class="overflow-x-auto">
+                    <pre class="overflow-x-auto"><code class="language-js">{{lintingPostRules}}</code></pre>
                 </div>
                 <p class="my-2 leading-relaxed">
                     This is better, but not by much. To steal a concept from <a href="https://wiki.c2.com/?CodeSmell" target="_blank" class="underline text-blue-800 hover:text-blue-500">Kent Beck's famous post on WardsWiki</a>, this code has a smell.

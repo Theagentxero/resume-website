@@ -30,4 +30,7 @@ html.modal-open{
 #Home{
 	max-width: 100vw;
 }
+#BlogHome{
+	max-width: 100vw;
+}
 </style>

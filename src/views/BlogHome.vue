@@ -1,5 +1,5 @@
 <template>
-    <div id="Home" class="scroll-smooth relative">
+    <div id="BlogHome" class="scroll-smooth relative">
         <Howdy ref="howdy"></Howdy>
         <div class="flex flex-row">
             <div class="basis-0 lg:basis-1/12"></div>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="blog-article-container">
         <div 
             class="bg-right-top bg-cover flex flex-col sm:flex-row justify-end sm:justify-start"
             :style="{
@@ -48,8 +48,8 @@
                             such as the type of the token, along with the algorithm used to encrypt it.
                             This data is provided in a convenient and easy to digest JSON format. <br>
                             Let's take a look at an example:
-                            <div class="my-2">
-                                <pre><code class="language-json">{{jwtHeaderExample}}</code></pre>
+                            <div class="my-2 overflow-x-auto">
+                                <pre class="overflow-x-auto"><code class="language-json">{{jwtHeaderExample}}</code></pre>
                             </div>
                             This example is typical of JWTs used for authorization. Its type (labeled typ) is "JWT", 
                             and its algorithm (labeled "alg") is an RSA type encryption algorithm.
@@ -58,8 +58,8 @@
                             <span class="font-semibold">Payload</span> - This potion contains the actual token data, the purpose of the JWT.
                             This section contains JSON data, arranged in JSON key-value pairs. In a JWT, each key-value pair is called a "claim". <br>
                             Here is an example:
-                            <div class="my-2">
-                                <pre><code class="language-json">{{jwtPayloadExample}}</code></pre>
+                            <div class="my-2 overflow-x-auto">
+                                <pre class="overflow-x-auto"><code class="language-json">{{jwtPayloadExample}}</code></pre>
                             </div>
                             This payload showcases two types of claims:
                             <ul class="ml-5 list-disc">
