@@ -180,7 +180,7 @@
                                     - Bots are lazy, and I don't want my contact info and resume indexed.
                                 </div>
                                 <div>
-                                    - I'm proving that I can.
+                                    - It seemed like fun.
                                 </div>
                             </div>
                         </template>
