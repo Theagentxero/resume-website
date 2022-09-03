@@ -19,7 +19,7 @@
                     role="Software Architect & Lead Developer"
                 ></ProjectsHeader>
                 <ProjectsContent
-                    leadText="Next Generation Backflow Device Compliance Managment Software"
+                    leadText="Next Generation Backflow Device Compliance Management Software"
                     :content="vaiContent"
                 ></ProjectsContent>
                 <ProjectsInteractionRow>
@@ -87,40 +87,40 @@ export default {
     data() {
         return {
             vaiContent:[
-                `A web based SaaS, architected from the ground up as a scalable multitenant ecosystem. 
+                `A web-based SaaS, architected from the ground up as a scalable multitenant ecosystem. 
                 Built on a modern tech stack consisting of Vue, Node.js, Express, and PostgreSQL,
                 Valve Ai is the industry's most advanced backflow compliance management software suite.`,
-                `A deeply integrated ecosystem, focused on meeting the Florida Department of Environmental Protection's 
+                `A deeply integrated ecosystem focused on meeting the Florida Department of Environmental Protection's 
                 strict standards for water quality and safety, Valve Ai provides for every stage and level of 
                 backflow device management, including work order entry, report generation, 
                 compliance statistics, GIS mapping, water-system-wide troubleshooting, 
                 and end-of-year FDEP compliance reporting.`,
                 `With more than 140,000 backflow devices under management, Valve Ai is used 
                 by water purveyors, governments, contractors, and individual testers alike. 
-                Valve Ai is well loved by it's users for it's intuitive implimentation of 
-                the most powerful featureset in the backflow industry.`
+                Valve Ai is well-loved by its users for its intuitive implementation of 
+                the most powerful feature set in the backflow industry.`
             ],
             jdoContent:[
-                `Known internally as JDO Quotes, this project is the product of a six month partnership
+                `Known internally as JDO Quotes, this project is the product of a six-month partnership
                 with the UCF Center for Humanities and Digital Research (CHDR, pronounced 'cheddar').`,
                 `In concert with a grant from the National Endowment for the Humanities, researchers and 
-                schollars at UCF CHDR's Johnsons Dictionary Online project endevaored to find the original
+                scholars at UCF CHDR's Johnsons Dictionary Online project endeavored to find the original
                 text source for the nearly 250,000 quotes used across two versions of Samuel Johnson's dictionary, 
                 an early english dictionary important in the study of fields such as english literature, 
-                historical law, and etymology. However, manually identifying the cannonical source for 
-                each of these quotes would likely have taken countless man hours over many years.`,
-                `The JDO Quotes project is a scratch built, purpose driven architecture that provides 
+                historical law, and etymology. However, manually identifying the canonical source for 
+                each of these quotes would likely have taken countless man-hours over many years.`,
+                `The JDO Quotes project is a scratch-built, purpose-driven architecture that provides 
                 automated ingestion, parsing, and searching of a corpus of historical text contemporary to 
                 the time period of Johnson's writing.`,
-                `Industry standard tools, along with purpose built modules, are integrated though a custom 
-                built pipeline provide a reliable platform perfectly suited for the task. Elasticsearch is used
-                heavily thoughout the project, serving multiple roles thoughout the pipeline.`,
-                `The result of this a complete pipeline run ready for verification within just a few hours.`,
+                `Industry-standard tools, along with purpose-built modules, are integrated through a custom-built 
+                pipeline to provide a reliable platform perfectly suited for the task. Elasticsearch is used
+                heavily throughout the project, serving multiple roles throughout the pipeline.`,
+                `The result of this is a complete pipeline run ready for verification within just a few hours.`,
                 `Post-pipeline, the JDO Quotes project, also provides an extensive set of tools for CHDR researchers.`,
-                `Project users are provided with a site-hosted full stack application built uniquely for the project.
-                This web based interface allows users to perform verification at speeds impossible prior to it's
+                `Project users are provided with a site-hosted full-stack application built uniquely for the project.
+                This web-based interface allows users to perform verification at speeds impossible before its
                 creation. Data analysis shows that CHDR researchers are regularly able to perform more than 200 
-                verifications per hour. This is up from less than 10 when processed manually.`,
+                verifications per hour per user. This is up from less than 10 when processed manually.`,
                 `This is due in no small part to a unique implementation of graph theory, which allows a researcher
                 to verify multiple quotes with a single action.`
             ]
