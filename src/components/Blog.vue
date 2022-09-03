@@ -78,21 +78,25 @@
         </div>
         <BlogModal
             v-model="thumbModal"
+            @update:modelValue="resetRouterQuery"
         >
             <ThumbnailPost></ThumbnailPost>
         </BlogModal>
         <BlogModal
             v-model="clarityModal"
+            @update:modelValue="resetRouterQuery"
         >
             <CodeClarity></CodeClarity>
         </BlogModal>
         <BlogModal
             v-model="jwtModal"
+            @update:modelValue="resetRouterQuery"
         >
             <JWTs></JWTs>
         </BlogModal>
         <BlogModal
             v-model="cargoModal"
+            @update:modelValue="resetRouterQuery"
         >
             <CargoCult></CargoCult>
         </BlogModal>
@@ -107,7 +111,7 @@ import CargoCult from '../articles/CargoCult.vue';
 import JWTs from '../articles/JWTs.vue';
 
 export default {
-    name: "BlogContainer",
+    name: "BlogPreview",
     components: {
         BlogModal,
         ThumbnailPost,
@@ -126,19 +130,22 @@ export default {
     methods: {
         openThumbModal(){
             this.thumbModal = true;
-            this.$router.push({ hash: `#Blog`, query: { open_article: 'entropy_based_thumbnail_gen' }})
+            this.$router.push({ query: { open_article: 'entropy_based_thumbnail_gen' }})
         },
         openJWTModal(){
             this.jwtModal = true;
-            this.$router.push({ hash: `#Blog`, query: { open_article: 'jwt_guide' }})
+            this.$router.push({  query: { open_article: 'jwt_guide' }})
         },
         openCargoModal(){
             this.cargoModal = true;
-            this.$router.push({ hash: `#Blog`, query: { open_article: 'the_new_face_of_cargo_cult_dev' }})
+            this.$router.push({ query: { open_article: 'the_new_face_of_cargo_cult_dev' }})
         },
         openClarityModal(){
             this.clarityModal = true;
-            this.$router.push({ hash: `#Blog`, query: { open_article: 'code_clarity' }})
+            this.$router.push({ query: { open_article: 'code_clarity' }})
+        },
+        resetRouterQuery(){
+            this.$router.push({ query: {}})
         }
     },
     computed:{
@@ -148,6 +155,26 @@ export default {
     beforeMount () {
     },
     mounted () {
+        if(this.$router.currentRoute.value.query.open_article != undefined){
+            let open = this.$router.currentRoute.value.query.open_article;
+            switch (open) {
+                case 'entropy_based_thumbnail_gen':
+                    this.openThumbModal();
+                    break;
+                case 'jwt_guide':
+                    this.openJWTModal();
+                    break;
+                case 'the_new_face_of_cargo_cult_dev':
+                    this.openCargoModal();
+                    break;
+                case 'code_clarity':
+                    this.openClarityModal();
+                    break;
+                default:
+                    this.resetRouterQuery();
+                    break;
+            }
+        }
     },
     beforeDestroy () {
     },

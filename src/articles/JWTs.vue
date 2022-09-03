@@ -38,25 +38,25 @@
                 <p class="my-2 leading-relaxed">
                     A JSON Web Token is a bearer token. Typically used for authentication and authorization.
                     When used in this manner, these JWTs are technically considered bearer authentication tokens. 
-                    This means whoever possess the token posseses the authorization.
+                    This means whoever possesses the token possesses the authorization.
                 </p>
                 <p class="my-2 leading-relaxed">
                     JSON Web Tokens are constructed of three parts:
                     <ul class="ml-5 list-disc">
                         <li class="py-1 leading-relaxed">
                             <span class="font-semibold">Header</span> - This portion contains some metadata about the JWT, 
-                            such as the type of the token, along with the alogrithmn used to encrypt it.
-                            This data is provided in a convenient and easy to digest, JSON format. <br>
+                            such as the type of the token, along with the algorithm used to encrypt it.
+                            This data is provided in a convenient and easy to digest JSON format. <br>
                             Let's take a look at an example:
                             <div class="my-2">
                                 <pre><code class="language-json">{{jwtHeaderExample}}</code></pre>
                             </div>
-                            This example is typical of JWTs used for authorization. It's type (labeled typ) is "JWT", 
-                            and it's alogrithmn (labeled "alg") is an RSA type encryption algorithm.
+                            This example is typical of JWTs used for authorization. Its type (labeled typ) is "JWT", 
+                            and its algorithm (labeled "alg") is an RSA type encryption algorithm.
                         </li>
                         <li class="py-1 leading-relaxed">
-                            <span class="font-semibold">Payload</span> - This potion contains the actual token data, purpose of the JWT.
-                            This section contains JSON data, aranged in JSON key-value pairs. In a JWT, each key-value pair is called a "claim". <br>
+                            <span class="font-semibold">Payload</span> - This potion contains the actual token data, the purpose of the JWT.
+                            This section contains JSON data, arranged in JSON key-value pairs. In a JWT, each key-value pair is called a "claim". <br>
                             Here is an example:
                             <div class="my-2">
                                 <pre><code class="language-json">{{jwtPayloadExample}}</code></pre>
@@ -65,19 +65,19 @@
                             <ul class="ml-5 list-disc">
                                 <li class="py-1 leading-relaxed">
                                     <span class="font-semibold">Registered Claims</span> - These are claims that are meaningful to the JWT itself,
-                                    registered claims are key value pairs which must follow a defined standard. The registered claims for this JWT are:
+                                    registered claims are key-value pairs that must follow a defined standard. The registered claims for this JWT are:
                                     the "iss", "exp", and "jti" claims. Respectively, these are the claims for the name of the issuer ("iss"), the timestamp
                                     of the JWT's expiration ("exp"), and the JWT id ("jti").
                                 </li>
                                 <li class="py-1 leading-relaxed">
                                     <span class="font-semibold">Private Claims</span> - These claims are those that you make for your own purposes.
-                                    In this case, the claims for "userID" and "otherData" are private claims. Generally speaking these claim names can be
-                                    anything that you would like, but they shouldn't collide with <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://www.iana.org/assignments/jwt/jwt.xhtml">any of the registed public claim names</a>.
+                                    In this case, the claims for "userID" and "otherData" are private claims. Generally speaking, these claim names can be
+                                    anything that you would like, but they shouldn't collide with <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://www.iana.org/assignments/jwt/jwt.xhtml">any of the registered public claim names</a>.
                                 </li>
                             </ul>
                         </li>
                         <li class="py-1 leading-relaxed">
-                            <span class="font-semibold">Signature</span> - This portion contains a cryptograhic signature of the claims made in the JWT.
+                            <span class="font-semibold">Signature</span> - This portion contains a cryptographic signature of the claims made in the JWT.
                             Here is the signature for our example:
                             <div class="my-2">
                                 <code class="language-text break-all">{{jwtSignatureExample}}</code>
@@ -88,7 +88,7 @@
                     </ul>
                 </p>
                 <p class="my-2 leading-relaxed">
-                    When provided to the client, the three parts of the JWT are encoded in base64 format, and concatenated together with periods.
+                    When provided to the client, the three parts of the JWT are encoded in base64 format and concatenated together with periods.
                     <br><br>
                     The final result looks like this: <br>
                     <code><span class="text-blue-700">header</span>.<span class="text-orange-700">payload</span>.<span class="text-purple-700">signature</span></code>
@@ -97,7 +97,7 @@
                     </div>
                 </p>
                 <p class="my-2 leading-relaxed">
-                    It is important to notice that this means that the actual payload of a JWT is not encrypted. Carefully consider what this means.
+                    It is critical to notice that this means that the actual payload of a JWT is not encrypted. Carefully consider what this means.
                     A JWT's payload should never contain sensitive information.
                 </p>
             </div>
@@ -105,7 +105,7 @@
                 How JWTs Are Used
             </div>
             <div class="p-2">
-                Let's consider the case of a full stack web application with the following authentication flow:
+                Let's consider the case of a full-stack web application with the following authentication flow:
                 <ul class="ml-5 list-decimal">
                     <li class="py-1 leading-relaxed">
                         The user goes to the web application and performs a login.
@@ -170,23 +170,23 @@
                 <ul class="ml-5 list-disc">
                     <li class="py-1 leading-relaxed">
                         <span class="font-semibold">A Few Notes On Whitelists</span> - High request volume architectures should consider the
-                        implimentation of an in memory key value datastore for JWT whitelist management. Consider Redis or Memcahced. 
+                        implementation of an in-memory key-value datastore for JWT whitelist management. Consider Redis or Memcached. 
                         Smaller architectures of &lt; 10,000 requests per minute will find that a properly managed traditional database is more than fast enough.
                     </li>
                     <li class="py-1 leading-relaxed">
                         <span class="font-semibold">Encrypted JWTs Can Mean Trouble</span> - JWTs can be encrypted, but that doesn't mean they should.
                         In my experience, finding encrypted JWTs has meant that the developers were using the JWTs to store sensitive information.
-                        Information which should have been stored in the whitelist record for this JWT. It also typically meant that they trusted the JWT
-                        to contain valid, up to date sensitive information, which is rarely universally true. Avoid storing anything in a JWT which you feel is
+                        Information that should have been stored in the whitelist record for this JWT. It also typically meant that they trusted the JWT
+                        to contain valid, up-to-date sensitive information, which is rarely universally true. Avoid storing anything in a JWT which you feel is
                         sensitive enough to require encryption, as that is a sign that the information should be locked behind the metadata in a whitelist lookup,
                         retrieved for use at the requested resource only after the JWT is validated.
                     </li>
                     <li class="py-1 leading-relaxed">
                         <span class="font-semibold">Use An Asymmetric Cryptographic Key</span> - As architectures scale, it can become tempting to spread
-                        the verfication of these JWTs across resources. With an asymmetric key, we can provide relief to this pressure without allowing for the
+                        the verification of these JWTs across resources. With an asymmetric key, we can provide relief to this pressure without allowing for the
                         generation of rouge JWTs throughout the system. Allowing resources to use the public key to verify the authenticity of the JWT without
-                        concern that the resource holds the private key, which if compromised would be problematic. The existance of a public key also allows
-                        for deep integration with third party services if the opportunity were to arise.
+                        concern that the resource holds the private key, which if compromised would be problematic. The existence of a public key also allows
+                        for deep integration with third-party services if the opportunity were to arise.
                     </li>
                 </ul>
             </div>

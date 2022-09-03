@@ -7,7 +7,7 @@
         >
             <div
                 @click.stop="()=>{}"
-                class="relative bg-ht-white mx-3 my-5 sm:my-5 sm:mx-5 lg:mx-auto lg:max-w-5xl p-5"
+                class="relative bg-ht-white mx-3 my-5 sm:my-5 sm:mx-5 xl:mx-auto lg:max-w-6xl p-5"
             >
                 <div @click.stop="close" class="absolute top-1 right-1 px-3 py-1 bg-red-700 z-20">
                     <i class="fa-solid fa-xmark fa-lg"></i>
@@ -43,13 +43,15 @@ export default {
 
 
 <style scoped>
-.v-enter-active,
-.v-leave-active {
-    transition: opacity 0.5s ease;
+.modal-enter-active{
+    transition: opacity 0.25s ease;
+}
+.modal-leave-active {
+    transition: opacity 0.125s ease;
 }
 
-.v-enter-from,
-.v-leave-to {
+.modal-enter-from,
+.modal-leave-to {
     opacity: 0;
 }
 </style>

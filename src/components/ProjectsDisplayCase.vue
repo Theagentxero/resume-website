@@ -16,7 +16,7 @@
             <div class="flex flex-col basis-4/6 p-2">
                 <ProjectsHeader
                     title="Valve Ai"
-                    role="Senior Lead Architect & Developer"
+                    role="Software Architect & Lead Developer"
                 ></ProjectsHeader>
                 <ProjectsContent
                     leadText="Next Generation Backflow Device Compliance Managment Software"
@@ -28,9 +28,9 @@
                             Visit Valve Ai's Website
                         </div>
                     </a>
-                    <div class="grow mt-2 md:mt-0 ml-0 md:ml-2 text-lg text-center p-1 shadow-lg bg-ht-dark hover:bg-ht-darker text-ht-whiter">
+                    <!-- <div class="grow mt-2 md:mt-0 ml-0 md:ml-2 text-lg text-center p-1 shadow-lg bg-ht-dark hover:bg-ht-darker text-ht-whiter">
                         Learn More About This Project
-                    </div>
+                    </div> -->
                 </ProjectsInteractionRow>
             </div>
         </div>
@@ -63,9 +63,9 @@
                             Visit Johnson's Dictionary Online
                         </div>
                     </a>
-                    <div class="grow mt-2 md:mt-0 ml-0 md:ml-2 text-lg text-center p-1 shadow-lg bg-ht-dark hover:bg-ht-darker text-ht-whiter">
+                    <!-- <div class="grow mt-2 md:mt-0 ml-0 md:ml-2 text-lg text-center p-1 shadow-lg bg-ht-dark hover:bg-ht-darker text-ht-whiter">
                         Learn More About This Project
-                    </div>
+                    </div> -->
                 </ProjectsInteractionRow>
             </div>
         </div>

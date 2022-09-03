@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="blog-article-container">
         <div 
             class="bg-right-top bg-cover flex flex-col sm:flex-row justify-end sm:justify-start"
             :style="{
@@ -42,76 +42,73 @@
                     apparently avoided the bug was ever fully understood
                 </p>
                 <p class="my-2 leading-relaxed">
-                    I'd like to suppliment this definition, because it feels a little incomplete. <br>
-                    <a href="https://docs.microsoft.com/en-us/archive/blogs/ericlippert/syntax-semantics-micronesian-cults-and-novice-programmers" target="_blank" class="underline text-blue-800 hover:text-blue-500">In a blog post from 2004, Eric Lippert fleshes this out a bit more:</a>
+                    <a href="https://docs.microsoft.com/en-us/archive/blogs/ericlippert/syntax-semantics-micronesian-cults-and-novice-programmers" target="_blank" class="underline text-blue-800 hover:text-blue-500">In a blog post from 2004, Eric Lippert discusses his take on the subject.</a>
+                    (Recommended reading for developers of all levels)
                 </p>
-                <p class="my-2 p-3 bg-ht-white leading-relaxed">
-                    There are lots of cargo cult programmers -- <span class="font-semibold">programmers who understand what the code does, but not how it does it.</span> 
-                    Therefore, they cannot make meaningful changes to the program. They tend to proceed by making random changes, testing, 
-                    and changing again until they manage to come up with something that works.
-                </p>
-                <div class="text-base italic text-center bg-ht-blue p-2 mb-2 sm:mb-0 sm:m-2 sm:w-64 sm:float-right shadow-lg">
+                <div class="text-base italic text-center bg-ht-blue p-2 mb-2 shadow-lg">
                     Side Note: This cargo cult behavior can actually affect an entire organization, which causes <a href="https://stevemcconnell.com/articles/cargo-cult-software-engineering/" target="_blank" class="underline text-blue-800 hover:text-blue-500">Cargo Cult Software Engineering</a>.
                 </div>
+            </div>
+           <div class="text-lg font-bold p-2 bg-ht-dark-brown text-ht-white shadow-lg">
+                The Emperor's New Clothes
+            </div>
+            <div class="p-2">
                 <p class="my-2 leading-relaxed">
-                    Cargo cult programming is back on the rise, riding on the coat-tails of package managers. 
+                    While not stictly the same as cargo cult programming, its thoughtless nature has arrived back in town, riding on the coattails of package managers. 
                 </p>
                 <p class="my-2 leading-relaxed">
-                    Consider a project using Node.js with it's package manager NPM.
+                    Consider a project using Node.js with its package manager NPM.
+                </p>
+                <div class="text-base italic text-center
+                    bg-ht-blue p-2 mb-2 sm:mb-0 sm:m-2 sm:w-64 sm:float-left lg:w-96 2xl:w-auto 2xl:max-w-lg
+                    shadow-lg">
+                    <span class="font-semibold">All of this assumes of course that the developer is making an active decision at all</span>
+                    <hr class="border-ht-dark-brown my-2">
+                    With the rise of Youtube tutorials, novice programmers can be "taken
+                    for a ride" so to speak, learning how to build X, using framework Y. 
+                    As such the developer may not realize that other methods exist, nor
+                    might they realize that building X may require no framework at all.
+                    Perhaps this is a "when all you have is a hammer" sort of situation, 
+                    and the developer feels the only solution to X is Y.
+                </div>
+                <p class="my-2 leading-relaxed">
                     If given the task of developing a REST API, most Node.js developers will ritualistically install their 'favorite' HTTP
-                    server framework, Express.js, KOA, or Fastify.
+                    server framework, Express.js, KOA, or Fastify. Little thought is given to if such a framework is even helpful for their purposes, suitable for the actual application,
+                    or required to achieve the goal.
                 </p>
                 <p class="my-2 leading-relaxed">
-                    Little thought is given to if such a framework is even helpful for their purposes, suitable for the actual application,
-                    or required to acheive the goal.
+                    When questioned on their framework choice, most will answer, "I've used this framework for building a REST API in the past". 
                 </p>
                 <p class="my-2 leading-relaxed">
-                    When questioned on their framework choice, most will answer, "I've used this framework for this kind of thing before". 
-                </p>
-                <p class="my-2 leading-relaxed">
-                    Notice that rather than reiterating the decisions that led them to their original usage of the framework,
-                    <TextPopper
-                        spanClass="italic underline break-words"
-                    >
-                        <template v-slot:text>assuming an active decision was made</template>
-                        <template v-slot:content>
-                            <div class="bg-ht-white p-3 border-ht-dark-brown border-2 flex flex-col max-w-sm">
-                                <div class="p-2 bg-ht-whiter">
-                                    With the rise of youtube tutorials, novice programmers can be "taken
-                                    for a ride" so to speak, learning how to build X, using framework Y. 
-                                    As such the developer may not realize that other methods exist, nor
-                                    might they realize that building X may require no framework at all.
-                                </div>
-                            </div>
-                        </template>
-                    </TextPopper>
-                    , the developer leans on experience with a framework to justify it's inclusion.
+                    Notice that rather than carefully considering the current project requirements and evaluating options,
+                    or even reiterating the decisions that led them to their original usage of the framework, 
+                    the developer leans exclusively on experience with a framework to justify its inclusion.
+                    <span class="italic">On the surface, it's not a bad point, familiarity can be a good reason for using a particular framework. 
+                    But it should never be <span class="font-semibold">the only reason</span> to use a framework.</span>
                     Note that at no point did the developer here give reason for the inclusion of 
-                    <span class="italic">any</span> framework, leave alone this one.
-                </p>
-                <p class="my-2 leading-relaxed">
-                    This seems like another way of saying "This is the way we've always done it".
-                </p>
-                <p class="my-2 leading-relaxed">
-                    None of us should like the "This is the way we've always done it" sentiment.
-                    It's a surrender to a higher power in all the wrong ways.
+                    <span class="italic">any</span> framework, leave alone this one. This seems like another way of saying 
+                    "This is the way we've always done it". A surrender to a higher power in all the wrong ways.
                 </p>
                 <p class="my-2 leading-relaxed">
                     This behavior is more prevalent today than most organizations would like to admit. 
-                    With many organizations encouraging the behavior by encouraging the use of only the 
-                    most popular framework. This can lead developers to feel boxed in by the choice being
-                    thrust upon them, which can often lead them to reach back to the tool that they trust
-                    when they feel backed into a corner, the package manager. Simply perpetuating the issue.
+                    Many organizations encourage this behavior by encouraging the use of only the 
+                    most popular framework. This can lead developers to feel boxed in or uncomfortable 
+                    by the choice being thrust upon them. 
                 </p>
                 <p class="my-2 leading-relaxed">
-                    Pacakge managers aren't evil, nor is using packages inherently bad. It's important to note 
-                    that familiarity with a particular package is a good reason to choose it. But only if 
-                    the choice is concious, and made with purpose and reason. Don't include packages just because
-                    "That's the way we've always done it".
+                    What do uncomfortable people do? They seek comfort.
                 </p>
-                
+                <p class="my-2 leading-relaxed">
+                    Turning to the package manager to provide the warm familiar syntax of a package which they hope might
+                    ease their discomfort with the entire project.
+                </p>
+                <p class="my-2 leading-relaxed">
+                    Package managers aren't evil, nor is using packages inherently bad. It's important to note 
+                    that familiarity with a particular package is a good reason to choose to use it over an alternative. 
+                    But only if the choice is conscious, informed, considerate of the project requirements, made with purpose, and well reasoned. 
+                    We should all be wary of using packages just because "That's the way we've always done it".
+                </p>
             </div>
-           
         </div>
         <ArticleFooter></ArticleFooter>
     </div>

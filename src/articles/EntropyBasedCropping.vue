@@ -112,28 +112,28 @@
                             </div>
                         </template>
                     </TextPopper>
-                    in his seminal 1948 paper "A Mathemetical Theory of Communication", which spawned an entire field of study called "Information Theory". 
+                    in his seminal 1948 paper "A Mathematical Theory of Communication", which spawned an entire field of study called "Information Theory". 
                     <br>
-                    It's a fascinating read, if a little dense. With it's importance as a foundation for an entire field of study, if you wanted to read it, 
+                    It's a fascinating read if a little dense. With its importance as a foundation for an entire field of study, if you wanted to read it, 
                     <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="http://web.mit.edu/6.976/www/handout/shannon.pdf">I'm</a> <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf">sure</a> <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://www.cs.ucf.edu/~dcm/Teaching/COP5611-Spring2012/Shannon48-MathTheoryComm.pdf">you</a> <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://web.stanford.edu/class/ee276/files/lec/lecture9_shannon.pdf">can</a> <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://ia803209.us.archive.org/27/items/bstj27-3-379/bstj27-3-379_text.pdf">find</a> <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://ieeexplore.ieee.org/document/6773024">a</a> <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://ia803209.us.archive.org/27/items/bstj27-3-379/bstj27-3-379_text.pdf">copy</a> <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://www.essrl.wustl.edu/~jao/itrg/shannon.pdf">somewhere</a>.
                 </p>
                 <div class="text-lg italic text-center
                     bg-ht-blue p-2 mb-2 sm:mb-0 sm:m-2 sm:w-64 sm:float-right
                     shadow-lg">
                     <i class="fa-solid fa-quote-left"></i>
-                    Entropy can be described simply as how suprising the average result of a particular random event would be.
+                    Entropy can be described simply as how surprising the average result of a particular random event would be.
                     <i class="fa-solid fa-quote-right"></i>
                 </div>
                 <p class="my-2 leading-relaxed">
-                    Entropy can be described simply as how suprising the average result of a particular random event would be. 
-                    The level of suprise is equivalent to the ammount of information that was revealed.
-                    When you flick on a light switch in your home, the fact that the lights come on isn't very suprising.
+                    Entropy can be described simply as how surprising the average result of a particular random event would be. 
+                    The level of surprise is equivalent to the amount of information that was revealed.
+                    When you flick on a light switch in your home, the fact that the lights come on isn't very surprising.
                     This is an example of a low information random result, nothing has changed since the last time you turned on that light.
-                    The bulb still works, the electicity is on, and the switch still functions; thus, no new information has been revealed. 
+                    The bulb still works, the electricity is on, and the switch still functions; thus, no new information has been revealed. 
                     However, consider how you react when you flick on a switch and nothing happens. 
                     You're probably suprised, but probably in an annoyed way. 
-                    The key here is that this is a suprising, low probability, high information event.
-                    Overall however, flicking on a lightswitch is a low entropy event, because the average result isn't very suprising.
+                    The key here is that this is a surprising, low probability, high information event.
+                    Overall, however, flicking on a light switch is a low entropy event, because the average result isn't very surprising.
                 </p>
             </div>
             <div class="text-lg font-bold p-2 bg-ht-dark-brown text-ht-white shadow-lg">
@@ -141,14 +141,14 @@
             </div>
             <div class="p-2">
                 <p class="my-2 leading-relaxed">
-                    Suprising results in random distributions are high information.
-                    This feels handy as we recently came to the realization that we wanted to crop out 
-                    unimportant portions of the image to create a thumbnail. Lets check to see if this assertion holds for images.
+                    Surprising results in random distributions are high information.
+                    This feels handy as we recently realized that we wanted to crop out 
+                    unimportant portions of the image to create a thumbnail. Let's check to see if this assertion holds for images.
                 </p>
                 <p class="my-2 leading-relaxed">
                     To do this, I've written some code that maps the entropy of the color distribution to a color gradient. 
-                    In the output bright green pixels would be an unsuprising color to receive if picking a pixel at random, 
-                    and red colored pixels would be an exceptionally suprising color to receive if picking a pixel at random.
+                    In the output, bright green pixels would be an unsurprising color to receive if picking a pixel at random, 
+                    and red colored pixels would be an exceptionally surprising color to receive if picking a pixel at random.
                 </p>
             </div>
             
@@ -172,8 +172,8 @@
                 </p>
                 <p class="my-2 leading-relaxed">
                     At this point, it's probably self-evident how entropy can be used to crop images quickly, accurately, and inexpensively.
-                    A typical implimentation would be to use some sort of gradient descent alogrithmn to scale and crop the input image until the
-                    contained entropy is as high as as possible.
+                    A typical implementation would be to use some sort of gradient descent algorithm to scale and crop the input image until the
+                    contained entropy is as high as possible.
                 </p>
             </div>
             <div class="text-lg font-bold p-2 bg-ht-dark-brown text-ht-white shadow-lg">
@@ -192,8 +192,8 @@
             </div>
             <div class="p-2">
                 <p class="my-1 leading-relaxed">
-                    This interactive section is powered by a Cloudflare worker, you can find the code for this example on my Github. <br>
-                    <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://github.com/Theagentxero/cloudflare-worker-entropy-mapping">View This Code On Github</a>
+                    This interactive section is powered by a Cloudflare worker, you can find the code for this example on my GitHub. <br>
+                    <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://github.com/Theagentxero/cloudflare-worker-entropy-mapping">View This Code On GitHub</a>
                 </p>
             </div>
             <div class="flex flex-col md:justify-center lg:flex-row px-2">
@@ -227,10 +227,10 @@
                     With the theory complete, our focus can move to practical application. 
                 </p>
                 <p class="my-2 leading-relaxed">
-                    For this section, I've setup a thumbnail generation API powered 
+                    For this section, I've set up a thumbnail generation API powered 
                     by <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://sharp.pixelplumbing.com/">Sharp</a>, a 
                     JavaScript image processing library. <br>
-                    <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://github.com/Theagentxero/thumbnail-generation-api">See the code for this Thubmnail Generation API at my Github</a>
+                    <a class="underline text-blue-800 hover:text-blue-500" target="_blank" href="https://github.com/Theagentxero/thumbnail-generation-api">See the code at my GitHub</a>
                 </p>
             </div>
             <div class="flex flex-row text-ht-white shadow-lg bg-ht-dark my-1 p-2">

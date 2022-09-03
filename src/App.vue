@@ -24,4 +24,10 @@ html{
 html.modal-open{
 	overflow: hidden;
 }
+.blog-article-container{
+	max-width: 100vw;
+}
+#Home{
+	max-width: 100vw;
+}
 </style>
