@@ -232,7 +232,7 @@ export default {
             this.awaitingCustomDownload = true;
             axios.post(`${import.meta.env.VITE_FORM_API_URL}/resume/${this.sessionStore.sessionID}`, { note: this.note }, {
                 headers: {
-                    'Content-Type': 'application/pdf',
+                    'Content-Type': 'application/json',
                 },
                 responseType: 'blob'
             })
@@ -250,7 +250,7 @@ export default {
             this.awaitingDownload = true;
             axios.get(`${import.meta.env.VITE_FORM_API_URL}/resume/${this.sessionStore.sessionID}`, {
                 headers: {
-                    'Content-Type': 'application/pdf',
+                    'Content-Type': 'application/json',
                 },
                 responseType: 'blob'
             })
